@@ -88,6 +88,11 @@
             <button onclick="toast.create({id:'error', msg: 'Todo salió MAL! ☢️', time: 45})" style="background-color: var(--error);">ERROR</button>
             <button onclick="toast.create({id:'custom', msg: 'Estamo probando mi loco! 😂', time: 45, icon: 'fa-solid fa-house', color: '#9135c6'})">CUSTOM</button>
         </div>
+        <script type="text/javascript">
+            const toast = new Tostada('toast')
+            toast.setFont('Roboto')
+            toast.setProgressbar('4px')
+        </script>
         <script src="src/js/Tostadas.js" async></script>
     </body>
 </html>

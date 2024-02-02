@@ -94,7 +94,3 @@ class Tostada {
     toast.timeoutId = setTimeout(() => this.remove(toast), time * 1000)
   }
 }
-
-const toast = new Tostada('toast')
-toast.setFont('Roboto')
-toast.setProgressbar('4px')
