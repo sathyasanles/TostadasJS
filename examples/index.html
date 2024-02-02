@@ -3,15 +3,91 @@
     <head>
         <meta charset="utf-8">
         <title>Tostada</title>
-        <link rel="stylesheet" href="../src/css/tostadas.min.css">
-        <link rel="stylesheet" href="css/toasts.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="../src/css/tostadas.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     </head>
     <body>
-        <button onclick="toast.create({id:'success', msg: 'Todo salió bien! JUJUJU', time: 100})">SUCCESS</button>
-        <button onclick="toast.create({id:'warning', title: 'Titulando...', msg: 'No te pases!', time: 200})">WARN</button>
-        <button onclick="toast.create({msg: 'Podrías hacer esto diferente 💁🏻‍♂️', time: 10})">INFO</button>
-        <button onclick="toast.create({id:'error', msg: 'Todo salió MAL! ☢️', time: 45})">ERROR</button>
-        <button onclick="toast.create({id:'custom', msg: 'Estamo probando mi loco! 😂', time: 45, icon: 'fa-solid fa-house', color: '#0ca6a9'})">CUSTOM</button>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Open Sans", sans-serif;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-flow: column nowrap;
+                background-color: #333333;
+                --dark: #34495E;
+                --light: #ffffff;
+                --success: #0ABF30;
+                --error: #E24D4C;
+                --warning: #E9BD0C;
+                --info: #3498DB;
+                --default: #9135c6;
+            }
+            header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            h1 {
+                margin-bottom: 20px;
+                color: #ffffff;
+                font-size: 24px;
+                font-weight: 600;
+            }
+            section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                button {
+                    padding: 10px 20px;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    background-color: #0ca6a9;
+                    color: #ffffff;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 1;
+                }
+                button:hover {
+                    animation: animate 0.5s ease-in-out forwards;
+                }
+            }
+            
+            @keyframes animate {
+                0% { 
+                    transform: translateY(0px);
+                }
+                100% {
+                    transform: translateY(-10px) scale(1.2);
+                }
+            }
+        </style>
+        <header>
+            <h1>Tostadas.JS</h1>
+        </header>
+        <section>
+            <button onclick="toast.create({id:'success', msg: 'Todo salió bien! JUJUJU', time: 100})" style="background-color: var(--success);">SUCCESS</button>
+            <button onclick="toast.create({id:'warning', title: 'Titulando...', msg: 'No te pases!', time: 200})" style="background-color: var(--warning);">WARN</button>
+            <button onclick="toast.create({msg: 'Podrías hacer esto diferente 💁🏻‍♂️', time: 10})" style="background-color: var(--info);">INFO</button>
+            <button onclick="toast.create({id:'error', msg: 'Todo salió MAL! ☢️', time: 45})" style="background-color: var(--error);">ERROR</button>
+            <button onclick="toast.create({id:'custom', msg: 'Estamo probando mi loco! 😂', time: 45, icon: 'fa-solid fa-house', color: '#9135c6'})">CUSTOM</button>
+        </div>
+        <script src="../src/js/Tostadas.js" async></script>
     </body>
 </html>
