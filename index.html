@@ -11,6 +11,11 @@
         <script src="src/js/Tostadas.js"></script>
     </head>
     <body>
+        <script type="text/javascript">
+            const toast = new Tostada('toast')
+            toast.setFont('Open Sans')
+            toast.setProgressbar('4px')
+        </script>
         <style>
             * {
                 margin: 0;
@@ -89,12 +94,5 @@
             <button onclick="toast.create({id:'error', msg: 'Todo salió MAL! ☢️', time: 45})" style="background-color: var(--error);">ERROR</button>
             <button onclick="toast.create({id:'custom', msg: 'Estamo probando mi loco! 😂', time: 45, icon: 'fa-solid fa-house', color: '#9135c6'})">CUSTOM</button>
         </div>
-        <script type="text/javascript">
-            window.onload = () => {
-                const toast = new Tostada('toast')
-                toast.setFont('Open Sans')
-                toast.setProgressbar('4px')
-            }
-        </script>
     </body>
 </html>
