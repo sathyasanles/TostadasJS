@@ -41,6 +41,7 @@
         .tostada-msg {
             font-size: 1.07rem;
             margin-left: 12px;
+            line-height: 28px;
             grid-area: 1 / 2 / 2 / 3;
         }
 
